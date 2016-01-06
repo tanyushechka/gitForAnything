@@ -1,25 +1,42 @@
----Пользователь@USER /C/OpenServer/domains/chats (master)
+Пользователь@USER /C/OpenServer/domains/chats (master)
 $ git remote set-url origin git@github.com:tanyushechka/chats.git
 
 
----Пользователь@USER /C/OpenServer/domains/chats (master)
+Пользователь@USER /C/OpenServer/domains/chats (master)
 $ eval $(ssh-agent -s)
----Agent pid 9956
+--или
+$ eval `ssh-agent`
+--В таком варианте запущенный ssh-agent, будет передан команде eval, которая выполнит его в текущей оболочке. 
+--Обратите внимание, используются обратные кавычки а не обычные !
+Agent pid 9956
 
 
----Пользователь@USER /C/OpenServer/domains/chats (master)
+Пользователь@USER /C/OpenServer/domains/chats (master)
 $ ssh-add ~/.ssh/tanyushechkassh
----Identity added: /c/Users/Пользователь/.ssh/tanyushechkassh (/c/Users/Пользователь/.ssh/tanyushechkassh)
+Identity added: /c/Users/Пользователь/.ssh/tanyushechkassh (/c/Users/Пользователь/.ssh/tanyushechkassh)
 
 
----Пользователь@USER /C/OpenServer/domains/chats (master)
+Пользователь@USER /C/OpenServer/domains/chats (master)
 $ git push --set-upstream origin master
----Counting objects: 7, done.
+Counting objects: 7, done.
 
 
 
 Т.о. чтобы переключиться на использование ssh-ключа другого аккаунта github.com, нужно:
-1. добавить ssh-агента:
-    $ eval $(ssh-agent -s)
+1. запустить процесс ssh-агента:
+    $ eval $(ssh-agent -s)  или  $ eval `ssh-agent`
 2. добавить в агента ключ:
     $ ssh-add ~/.ssh/tanyushechkassh
+
+
+Посмотреть отпечатки загруженных в ssh-agent ключей, можно той-же командой ssh-add с опцией -l, или целиком ключи, опцией -L.
+
+Пользователь@USER /C/OpenServer/domains/d3 (master)
+$ ssh-add -l
+2048 ad:5c:d3:66:e4:73:09:e0:82:86:a7:e8:99:2c:b1:93 /c/Users/Пользователь/.ssh/tanyushechkassh (RSA)
+
+Пользователь@USER /C/OpenServer/domains/d3 (master)
+$ ssh-add -L
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6X29elgizzio4bs7T7dNnV9lmmgpn+pALU2zl9d2nTeKMOhS+gx/ZvTYYJxSkP/BvoblFXdERSmNB4kXtZKyYyeDI7UfRQihYk9q1PGN7fgpXriaTOj11Ny7F4uWvMrNP
+PouaG8mdN4AtApjHw95Yz+dbS6E2P8sqwI7WX53GG+i+xUPBB4ljC6HS1u60MqBIPAlb5dXzNZo8cPNnUlzt0s1bflmUAIGg53DflIE9M7Mts0BAZ1CYlsWy8J2UYZqHm8YjBjDy+L3FBfE59UUfYrgzUY3tBRI1FtzXUHjg
+d8KqSu9ooiDIrjN+/QvIU4zQypcPWI64WkqpCrIv /c/Users/Пользователь/.ssh/tanyushechkassh
