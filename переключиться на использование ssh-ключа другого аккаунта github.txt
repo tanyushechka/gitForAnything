@@ -1,3 +1,7 @@
+--http://vds-admin.ru/ssh/ssh-autentifikatsiya-po-klyucham-ispolzovanie-programm-ssh-keygen-i-ssh-agent
+--https://help.github.com/articles/error-permission-denied-publickey/#always-use-the-git-user
+
+
 Пользователь@USER /C/OpenServer/domains/chats (master)
 $ git remote set-url origin git@github.com:tanyushechka/chats.git
 
