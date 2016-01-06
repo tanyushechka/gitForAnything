@@ -1,25 +1,25 @@
----Пользователь@USER /C/OpenServer/domains/chats (master)
+---РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ@USER /C/OpenServer/domains/chats (master)
 $ git remote set-url origin git@github.com:tanyushechka/chats.git
 
 
----Пользователь@USER /C/OpenServer/domains/chats (master)
+---РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ@USER /C/OpenServer/domains/chats (master)
 $ eval $(ssh-agent -s)
 ---Agent pid 9956
 
 
----Пользователь@USER /C/OpenServer/domains/chats (master)
+---РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ@USER /C/OpenServer/domains/chats (master)
 $ ssh-add ~/.ssh/tanyushechkassh
----Identity added: /c/Users/Пользователь/.ssh/tanyushechkassh (/c/Users/Пользователь/.ssh/tanyushechkassh)
+---Identity added: /c/Users/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/.ssh/tanyushechkassh (/c/Users/РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ/.ssh/tanyushechkassh)
 
 
----Пользователь@USER /C/OpenServer/domains/chats (master)
+---РџРѕР»СЊР·РѕРІР°С‚РµР»СЊ@USER /C/OpenServer/domains/chats (master)
 $ git push --set-upstream origin master
 ---Counting objects: 7, done.
 
 
 
-Т.о. чтобы переключиться на использование ssh-ключа другого аккаунта github.com, нужно:
-1. добавить ssh-агента:
+Рў.Рѕ. С‡С‚РѕР±С‹ РїРµСЂРµРєР»СЋС‡РёС‚СЊСЃСЏ РЅР° РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµ ssh-РєР»СЋС‡Р° РґСЂСѓРіРѕРіРѕ Р°РєРєР°СѓРЅС‚Р° github.com, РЅСѓР¶РЅРѕ:
+1. РґРѕР±Р°РІРёС‚СЊ ssh-Р°РіРµРЅС‚Р°:
     $ eval $(ssh-agent -s)
-2. добавить в агента ключ:
+2. РґРѕР±Р°РІРёС‚СЊ РІ Р°РіРµРЅС‚Р° РєР»СЋС‡:
     $ ssh-add ~/.ssh/tanyushechkassh
