@@ -16,7 +16,7 @@ Agent pid 9956
 
 
 Пользователь@USER /C/OpenServer/domains/chats (master)
-$ ssh-add ~/.ssh/tanyushechkassh
+$ ssh-add ~/.ssh/tanyushechkassh или $ ssh-add ~/.ssh/id_rsa
 Identity added: /c/Users/Пользователь/.ssh/tanyushechkassh (/c/Users/Пользователь/.ssh/tanyushechkassh)
 
 
